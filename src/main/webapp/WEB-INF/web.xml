@@ -17,7 +17,7 @@
     <!-- 强制进行编码转换 -->
     <init-param>
       <param-name>forceEncoding</param-name>
-      <param-value>true</param-value>
+      <param-value>false</param-value>
     </init-param>
   </filter>
   <!--  过滤器的匹配 URL -->

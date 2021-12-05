@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>Dear Honey</title>
-    
+    <link rel="stylesheet" href="/css/cutscenes.css" type="text/css">
+    <script src="/js/cutscenesShowTime.js"></script>
 </head>
 
 <body>
@@ -14,29 +15,11 @@
 </div>
 <canvas class="canvas" width="1820" height="905"></canvas>
 <p class="text" style="color: #ed3073;">
-    We fell in love
+    我们已经相识了
     <br/>
     <span id="span_dt_dt"></span>
 </p>
-<script language="javascript">
-    function show_date_time() {
-        window.setTimeout("show_date_time()", 1000);
-        BirthDay = new Date("1/20/2018 00:00:00");//这个日期是可以修改的
-        today = new Date();
-        timeold = (today.getTime() - BirthDay.getTime());
-        sectimeold = timeold / 1000
-        secondsold = Math.floor(sectimeold);
-        msPerDay = 24 * 60 * 60 * 1000
-        e_daysold = timeold / msPerDay
-        daysold = Math.floor(e_daysold);
-        e_hrsold = (e_daysold - daysold) * 24;
-        hrsold = Math.floor(e_hrsold);
-        e_minsold = (e_hrsold - hrsold) * 60;
-        minsold = Math.floor((e_hrsold - hrsold) * 60);
-        seconds = Math.floor((e_minsold - minsold) * 60);
-        span_dt_dt.innerHTML = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
-    }
-
+<script>
     show_date_time();
 </script>
 <script>
@@ -44,14 +27,12 @@
         init: function () {
             S.Drawing.init('.canvas');
             document.body.classList.add('body--ready');
-            //想说的话
-            S.UI.simulate("{{被表白者}}|I'm|许远志|Nice|to|Meet|You|#countdown 3|#time");
+            S.UI.simulate("天奇|我是|你的老baby|遇到你|真的|很幸运|正在进入|#countdown 3|#time");
             S.Drawing.loop(function () {
                 S.Shape.render();
             });
         }
     };
-
 
     S.Drawing = (function () {
         var canvas,
@@ -166,7 +147,7 @@
                                 if (sequence.length === 0) {
                                     S.Shape.switchShape(S.ShapeBuilder.letter(''));
                                 } else {
-                                    window.open('result.html', '_self');
+                                    window.open('result', '_self');
                                     performAction(sequence);
                                 }
                             } else {
@@ -347,10 +328,10 @@
 
 
     S.ShapeBuilder = (function () {
-        var gap = 13,
+        var gap = 8,
             shapeCanvas = document.createElement('canvas'),
             shapeContext = shapeCanvas.getContext('2d'),
-            fontSize = 500,
+            fontSize = 300,
             fontFamily = 'Avenir, Helvetica Neue, Helvetica, Arial, sans-serif';
 
         function fit() {
@@ -420,7 +401,7 @@
 
                 image.onload = function () {
                     shapeContext.clearRect(0, 0, shapeCanvas.width, shapeCanvas.height);
-                    shapeContext.drawImage(this, 0, 0, a.h * 0.6, a.h * 0.6);
+                    shapeContext.drawImage(this, 0, 0, a.h * 0.5, a.h * 0.5);
                     callback(processCanvas());
                 };
 
@@ -563,7 +544,7 @@
                         dots[i].move(new S.Point({
                             x: Math.random() * a.w,
                             y: Math.random() * a.h,
-                            a: 0.3, //.4
+                            a: 0.4, //.4
                             z: Math.random() * 4,
                             h: 0
                         }));

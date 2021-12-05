@@ -10,10 +10,16 @@ import java.util.Objects;
 public class SearchController
 {
     @RequestMapping(value="/searchJudge",params = "name", method={RequestMethod.POST, RequestMethod.GET})
-    public String welcomeToSpringMVC(String name) {
+    public String judageMent(String name) {
         if(Objects.equals("解天奇",name)){
-            return "success";
+            return "cutscenes";
         }
-        return "error";
+        //测试入口
+        return "result";
     }
+    @RequestMapping("/result")
+    public String enterMain(){
+        return "result";
+    }
+
 }
