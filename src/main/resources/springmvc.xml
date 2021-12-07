@@ -10,7 +10,21 @@
     <!-- 配置需要扫描的包 -->
     <context:component-scan base-package="com.hcxy.controller"></context:component-scan>
     <!-- 配置注解驱动 -->
-    <mvc:annotation-driven />
+    <!-- 配置注解驱动 -->
+    <mvc:annotation-driven>
+        <!--处理html乱码问题-->
+        <mvc:message-converters register-defaults="true">
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>application/json;charset=UTF-8</value>
+                        <value>text/plain;charset=UTF-8</value>
+                        <value>text/html;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
 <!--    <bean  class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
 <!--        <property name="prefix" value="/WEB-INF/pages/"/>-->
 <!--        <property name="suffix" value=".jsp"/>-->
@@ -30,4 +44,5 @@
     </bean>
     <!-- 使用默认servlet处理方式放行所有资源-->
     <mvc:default-servlet-handler/>
+    <mvc:resources location="/sound/" mapping="/sound/*.mp3"/>
 </beans>

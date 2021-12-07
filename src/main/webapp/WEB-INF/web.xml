@@ -45,7 +45,8 @@
   <servlet-mapping>
     <servlet-name>default</servlet-name>
     <url-pattern>*.html</url-pattern>
-<!--    <url-pattern>*.js</url-pattern>-->
-<!--    <url-pattern>*.css</url-pattern>-->
+    <url-pattern>*.js</url-pattern>
+    <url-pattern>*.css</url-pattern>
+    <url-pattern>*.mp3</url-pattern>
   </servlet-mapping>
 </web-app>
