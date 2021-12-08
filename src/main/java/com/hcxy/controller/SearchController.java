@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.*;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 @Controller
 public class SearchController
@@ -25,6 +27,21 @@ public class SearchController
     @RequestMapping("/declaration")
     public String declaration(){
         return "declaration";
+    }
+
+    @RequestMapping("/amapshow")
+    public String amapShow(){
+        return "amapshow";
+    }
+
+    @RequestMapping("/pptshow")
+    public String pptShow(){
+        return "pptshow";
+    }
+
+    @RequestMapping("/tieitem")
+    public String social(){
+        return "tieitem";
     }
 
     /**
@@ -86,5 +103,4 @@ public class SearchController
             e.printStackTrace();
         }
     }
-
 }

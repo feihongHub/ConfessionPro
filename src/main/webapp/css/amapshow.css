@@ -1,0 +1,69 @@
+.amap-marker-content {
+    position: relative;
+}
+.marker_area {
+    width: 44px;
+    height: 34px;
+    padding: 5px 23px 13px 5px;
+    background: url(https://ditu.amap.com/assets/img/livephoto_aera.png) center center no-repeat;
+    background-size: cover;
+    position: relative;
+    cursor: pointer;
+}
+.photo_thumb {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.marker_area .marker_area_name{
+    display: none;
+    position: absolute;
+    left: 14px;
+    bottom: 20px;
+    color: #333;
+    padding-left: 20px;
+    height: 24px;
+    line-height: 24px;
+    width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /*地图标志*/
+    background: url(https://ditu.amap.com/assets/img/photo_loc_icon.png) left center no-repeat;
+}
+.marker_area .marker_area_message{
+    display: none;
+    position: absolute;
+    left: 14px;
+    bottom: 20px;
+    color: #333;
+    padding-left: 20px;
+    height: 24px;
+    line-height: 24px;
+    width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /*地图标志*/
+    background: url(https://ditu.amap.com/assets/img/photo_loc_icon.png) left center no-repeat;
+}
+
+.marker_area.photo_hover .marker_area_name {
+    display: block;
+}
+.marker_area.photo_hover .marker_area_message {
+    display: block;
+}
+
+.marker_area.photo_hover {
+    bottom: 109px;
+    left: -71px;
+    width: 184px;
+    height: 106px;
+    padding: 9px 52px 48px 9px;
+    background: url(https://ditu.amap.com/assets/img/photo_hover.png) center center no-repeat;
+    background-size: cover;
+}
