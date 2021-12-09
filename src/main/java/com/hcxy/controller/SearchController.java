@@ -19,6 +19,11 @@ public class SearchController
         //测试入口
         return "result";
     }
+    @RequestMapping("/result")
+    public String showResult(){
+        return "result";
+    }
+
     @RequestMapping("/fire")
     public String enterMain(){
         return "fire";
@@ -39,8 +44,13 @@ public class SearchController
         return "pptshow";
     }
 
-    @RequestMapping("/tieitem")
+    @RequestMapping("/postbar")
     public String social(){
+        return "postbar";
+    }
+
+    @RequestMapping("/tieitem")
+    public String tieitem1(){
         return "tieitem";
     }
 
