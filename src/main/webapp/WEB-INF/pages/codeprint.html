@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>芝加哥打字机</title>
+    <meta charset="GBK">
+    <link href="/css/declaration.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/garden.js"></script>
+    <script type="text/javascript" src="/js/functions.js"></script>
+    <style>
+        img {
+            width: 380px;
+            height: 280px;
+            vertical-align: top;
+        }
+    </style>
+</head>
+
+<body>
+<div id="mainDiv">
+    <div id="content">
+        <div id="code">
+            <p id="p1">
+                <span class="space"/><span class="comments">public synchronized static <T> ArrayList<T> inputData(T... t) { </span><br />
+                <span class="space"/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">ArrayList<T> ts = new ArrayList<>(); </span><br />
+                <span class="space"/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">Collections.addAll(ts, t);</span><br />
+                <span class="space"/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">return ts;</span><br />
+                <span class="space"/><span class="comments">}</span><br />
+                <br/>
+                <span class="comments">&nbsp;public synchronized static <T> void searchMidNumber(ArrayList<T> objList) throws NullPointerException{</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">PriorityQueue<T> upQueue = new PriorityQueue<>();</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">PriorityQueue<T> lowQueue = new PriorityQueue<>(new Comparator<T>() {</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">@Override</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">public int compare(T o1, T o2) {</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">if (o1 instanceof Integer && o2 instanceof Integer) {</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">return (Integer) o2 - (Integer) o1;</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">}</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">return 0;</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">}</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">});</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">if (Objects.equals("java.lang.Integer", objList.get(0).getClass().getName())) {</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">upQueue.add(objList.remove(0));</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">for (T item : objList) {</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">if ((Integer) upQueue.peek() <= (Integer) item) {</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">upQueue.add(item);</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">} else {</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">lowQueue.add(item);</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">}</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">if (upQueue.size() - lowQueue.size() > 1) {</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">lowQueue.add(upQueue.poll());</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">}else if(upQueue.size() - lowQueue.size() < 1){</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">upQueue.add(lowQueue.poll());</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">}</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">}</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">if ((objList.size() + 1) % 2 == 0) {</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">System.out.println(((Integer) upQueue.peek() + (Integer) lowQueue.peek()) / 2.0);</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">} else {</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">System.out.println(upQueue.size() > lowQueue.size() ? upQueue.peek() : lowQueue.peek());</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">}</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">}</span><br />
+                <span class="comments">&nbsp;}</span><br />
+                <br />
+                <span class="comments">&nbsp;public static void main(String[] args) {</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">ArrayList<Integer> objList = inputData(3, 9, 0, 7, 1, 8, 5);</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">try{</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">searchMidNumber(objList);</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">}catch (NullPointerException e){</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">e.printStackTrace();</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">}</span><br />
+                <span class="comments">&nbsp;}</span><br />
+            </p>
+        </div>
+    </div>
+</div>
+<div class="bg1">
+    <div class="main">
+        <footer style="line-height:20px">
+            <div id="copyright">
+                <a href='' target="_blank"></a>
+                </object>
+            </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var offsetX = $("#loveHeart").width() / 2;
+    var offsetY = $("#loveHeart").height() / 2 - 55;
+    if (!document.createElement('canvas').getContext) {
+        var msg = document.createElement("div");
+        msg.id = "errorMsg";
+        msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+        document.body.appendChild(msg);
+        $("#code").css("display", "none")
+        $("#copyright").css("position", "absolute");
+        $("#copyright").css("bottom", "10px");
+        document.execCommand("stop");
+    } else {
+        $("#code").typewriter();
+    }
+</script>
+
+<br>
+
+<div class="shell">
+    <div class="header">
+        天奇的专属测试器
+    </div>
+    <span>&gt;</span>
+    <span class="text"></span>
+    <i class="cursor" style="display: none; border-right:6px solid #30ad23;"></i>
+</div>
+<script>
+    const $ = attr => document.querySelector(attr);
+    const textDom = $('.text');
+    const cursorDom = $('.cursor');
+    const shell = $('.shell');
+    let timer;
+    let cursonTimer;
+
+    const input = (text) => {
+        const textArr = text.split('');
+        let index = 0;
+
+        const auto = () => {
+            cursorDom.style.display = 'inline';
+            clearInterval(cursonTimer);
+            const showText = textArr.slice(0, index).join('')
+                .replace(/<\/br>/ig, '</br>> ')
+                .replace(/<span\sclass\=\"js\">([^\/]*)<\/span>/ig, '\<span style="color: #415caa"\>$1\<\/span\>')
+                .replace(/<span\sclass\=\"fun\">([^\/]*)<\/span>/ig, '\<span style="color: #de5d52"\>$1\<\/span\>');
+            textDom.innerHTML = showText;
+            timer = setTimeout(auto, 100);
+            if (/;$/.test(showText)) {
+                clearTimeout(timer);
+                timer = setTimeout(auto, 2000);
+                cursonTimer = setInterval(() => {
+                    if (cursorDom.style.display === 'none') {
+                        cursorDom.style.display = 'inline';
+                    } else {
+                        cursorDom.style.display = 'none';
+                    }
+                }, 500);
+            }
+            if (/#000$/.test(showText)) {
+                shell.style.backgroundColor = '#000';
+            }
+            ;
+            if (/#30ad23$/.test(showText)) {
+                shell.style.color = '#30ad23';
+            }
+            ;
+            if (/10px$/.test(showText)) {
+                shell.style.fontSize = '10px';
+            }
+            ;
+            if (/\.{6}$/.test(showText)) {
+                clearTimeout(timer);
+                timer = setTimeout(auto, 2000);
+                cursonTimer = setInterval(() => {
+                    if (cursorDom.style.display === 'none') {
+                        cursorDom.style.display = 'inline';
+                    } else {
+                        cursorDom.style.display = 'none';
+                    }
+                }, 500);
+                const remark = $('.remark');
+                remark.style.color = '#ffda23';
+                shell.style.color = '#ffda23';
+            }
+            var current = text.substr(index, 1);
+            if (current === '<') {
+                index = text.indexOf('>', index) + 1;
+            } else {
+                index++;
+            }
+            if (index > textArr.length) {
+                clearTimeout(timer);
+                cursonTimer = setInterval(() => {
+                    if (cursorDom.style.display === 'none') {
+                        cursorDom.style.display = 'inline';
+                    } else {
+                        cursorDom.style.display = 'none';
+                    }
+                }, 500);
+            }
+            ;
+        }
+
+        timer = setTimeout(auto, 100);
+    }
+    const loadImage = () => {
+        const remark = $('.remark');
+        const shell = $('.shell');
+        // remark.style.color = '#fff';
+        shell.style.color = '#fff';
+    }
+    let fun = () => console.log('time out');
+    let sleep = function(fun,time){
+        setTimeout(()=>{
+            input('<span class="js">输入:</span> <span style="color: #a3c6ec">[3, 9, 0, 7, 1, 8, 5]</span>=><span style="color: #efc014">调用inputData()函数</span>;' +
+                '</br><span class="js">输出结果:</span><span class="fun">=> 5</span></br>' +
+                '<span class="remark">进入解释模式[0==================100%]<span style="display: none">#000;</span></span></br>' +
+                '<span class="remark" style="color: green">*当前算法可以实现接受任意长度的乱序整数序列，然后快速将这个序列的中位数计算出来;</span></br>' +
+                '<span class="remark" style="color: green">*时间复杂度O(nlogn)，比绝大多数的排序查找算法都快。</span></br>' +
+                '<span class="remark">进入说人话模式[0==================100%]</span><span style="display: none">15px</span></br>' +
+                '<span class="remark" style="color: yellow">//对于每一个人而言，找到一个能够与他长相思守的人的概率服从正态分布(也称:高斯分布);</span></br>'+
+                '<img src="image/normal.jpg" onload="loadImage()"></br>'+
+                '<span class="remark" style="color: yellow">//概率越高，对应的y轴值也越高。当处于顶点位置时，对应x轴的那个点被称之为“中位数”;</span></br>' +
+                '<span class="remark" style="color: yellow">//在我看来，你就是我的“中位数”，所以我会不遗余力的尝试用最快的速度从人群中找到你;</span></br>');
+        },time);
+    }
+
+    sleep(fun,20000);
+
+</script>
+</body>
+
+</html>

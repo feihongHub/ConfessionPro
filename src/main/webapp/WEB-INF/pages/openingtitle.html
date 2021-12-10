@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="GBK">
+    <title>开场动画</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #container {
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        #background_video {
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            text-align: center;
+            font-family: 'proxima-nova', Helvetica;
+        }
+
+        #container {
+            height: 100%;
+        }
+
+        #overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <video id="background_video" loop muted></video>
+    <div id="video_cover"></div>
+    <div id="overlay"></div>
+</div>
+<script src="/js/bvideo/bideo.js"></script>
+<script src="/js/bvideo/main.js"></script>
+
+<script>
+    setInterval("myInterval()", 12000);//1000为1秒钟
+    function myInterval() {
+        window.location.href = 'result';
+    }
+</script>
+</body>
+</html>

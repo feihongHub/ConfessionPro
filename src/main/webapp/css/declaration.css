@@ -8,8 +8,10 @@ body {
 }
 
 #mainDiv {
-    width: 100%;
-    height: 100%
+    width: 1200px;
+    height: 700px;
+    background: #000000;
+    margin: auto;
 }
 
 #loveHeart {
@@ -116,7 +118,7 @@ body {
     padding: 10px;
 
     /*background: #FFF url(http://static.tieba.baidu.com/tb/cms/frs/bg/bg_105_wrap2.jpg) no-repeat fixed top center;*/
-	background: #000000;
+    /*background: #000000;*/
 
     margin-left: 0px;
 
@@ -139,5 +141,44 @@ body {
 
 #copyright a {
     color: #666
+}
+
+.shell {
+    width: 1200px;
+    height: 510px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: 15px;
+    color: #828282;
+    font: monospace;
+    margin: auto;
+}
+.header {
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+}
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes caret {
+    50% {
+        border-right-color: transparent;
+    }
+}
+
+h1 {
+    font: bold 200% Consolas, Monaco, monospace;
+    width: 20ch;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .05em solid;
+    animation: typing 2s steps(20),
+    caret 1s steps(1) infinite;
 }
 

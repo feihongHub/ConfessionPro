@@ -9,19 +9,29 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 @Controller
-public class SearchController
-{
+public class SearchController {
     @RequestMapping(value="/searchJudge",params = "name", method={RequestMethod.POST, RequestMethod.GET})
     public String judageMent(String name) {
         if(Objects.equals("解天奇",name)){
-            return "cutscenes";
+            return "openingtitle";
         }
         //测试入口
-        return "result";
+        return "error";
     }
+
+    @RequestMapping("/openingtitle")
+    public String bvideo(){
+        return "openingtitle";
+    }
+
     @RequestMapping("/result")
     public String showResult(){
         return "result";
+    }
+
+    @RequestMapping("/codeprint")
+    public String codePrint(){
+        return "codeprint";
     }
 
     @RequestMapping("/fire")
