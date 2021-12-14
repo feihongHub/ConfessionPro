@@ -22,7 +22,7 @@
     // of different video formats to add
     src: [
       {
-        src: 'sound/opentitle.mp4',
+        src: 'sound/BGM_1.mp4',
         type: 'video/mp4'
       },
       {

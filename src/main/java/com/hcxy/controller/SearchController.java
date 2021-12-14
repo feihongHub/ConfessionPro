@@ -29,6 +29,12 @@ public class SearchController {
         return "result";
     }
 
+    @RequestMapping("/cutscenes")
+    public String showCutscenes(){
+        return "cutscenes";
+    }
+
+
     @RequestMapping("/codeprint")
     public String codePrint(){
         return "codeprint";
@@ -62,6 +68,24 @@ public class SearchController {
     @RequestMapping("/tieitem")
     public String tieitem1(){
         return "tieitem";
+    }
+    @RequestMapping("/tieitem2")
+    public String tieitem2(){
+        return "tieitem2";
+    }
+    @RequestMapping("/tieitem3")
+    public String tieitem3(){
+        return "tieitem3";
+    }
+    @RequestMapping("/tieitem4")
+    public String tieitem4(){
+        return "tieitem4";
+    }
+
+
+    @RequestMapping("/error")
+    public String error(){
+        return "error";
     }
 
     /**

@@ -47,18 +47,18 @@ html, body {
 	margin-bottom: 4px;
 	cursor: pointer;
 }
- /*
+/*
 .tip {
-	position: absolute;
-	bottom: 30px;
-	right: 10px;
-	background-color: #FFF;
-	text-align: center;
-	border: 1px solid #ccc;
-	line-height: 30px;
-	border-radius: 3px;
-	padding: 0 5px;
-	font-size: 12px;
+   position: absolute;
+   bottom: 30px;
+   right: 10px;
+   background-color: #FFF;
+   text-align: center;
+   border: 1px solid #ccc;
+   line-height: 30px;
+   border-radius: 3px;
+   padding: 0 5px;
+   font-size: 12px;
 }
 */
 #tip {

@@ -125,7 +125,7 @@ window.onload = function () {
         var commentBox = node.parentNode.parentNode.parentNode;
         var box = commentBox.parentNode.parentNode.parentNode;
         var txt = node.innerHTML;
-        var user = commentBox.getElementsByClassName('user')[0].innerHTML;
+        var user = commentBox.getElementsByClassName('user')[1].innerHTML;
         var textarea = box.getElementsByClassName('comment')[0];
         if (txt == '删除') {
             removeList(commentBox);

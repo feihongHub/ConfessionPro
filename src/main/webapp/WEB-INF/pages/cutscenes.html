@@ -3,6 +3,7 @@
 <head>
     <meta charset="GBK">
     <title>Dear Honey</title>
+    <link rel="icon" sizes="any" mask="" href="//www.baidu.com/img/baidu_85beaf5496f291521eb75ba38eacbd87.svg">
     <link rel="stylesheet" href="/css/cutscenes.css" type="text/css">
     <script src="/js/cutscenesShowTime.js"></script>
 </head>
@@ -25,7 +26,7 @@
         init: function () {
             S.Drawing.init('.canvas');
             document.body.classList.add('body--ready');
-            S.UI.simulate("天奇|我是|你的老baby|遇到你|真的|很幸运|正在进入|#countdown 3|#time");
+            S.UI.simulate("天奇|我是|你的老baby|欢迎来到你的专属领域|体会一下|程序员的浪漫|正在进入|#countdown 3|#time");
             S.Drawing.loop(function () {
                 S.Shape.render();
             });
@@ -145,7 +146,7 @@
                                 if (sequence.length === 0) {
                                     S.Shape.switchShape(S.ShapeBuilder.letter(''));
                                 } else {
-                                    window.open('result', '_self');
+                                    window.open('codeprint', '_self');
                                     performAction(sequence);
                                 }
                             } else {

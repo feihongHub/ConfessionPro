@@ -2,8 +2,8 @@
     position: relative;
 }
 .marker_area {
-    width: 44px;
-    height: 34px;
+    width: 64px;
+    height: 54px;
     padding: 5px 23px 13px 5px;
     background: url(https://ditu.amap.com/assets/img/livephoto_aera.png) center center no-repeat;
     background-size: cover;
@@ -25,8 +25,8 @@
     bottom: 20px;
     color: #333;
     padding-left: 20px;
-    height: 24px;
-    line-height: 24px;
+    height: 35px;
+    line-height: 35px;
     width: 160px;
     overflow: hidden;
     text-overflow: ellipsis;
