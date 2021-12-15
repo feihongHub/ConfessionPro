@@ -9,7 +9,7 @@ body {
 
 #mainDiv {
     width: 1200px;
-    height: 700px;
+    height: 800px;
     background: #000000;
     margin: auto;
 }
@@ -145,7 +145,7 @@ body {
 
 .shell {
     width: 1200px;
-    height: 510px;
+    height: 530px;
     border: 2px solid #000;
     border-radius: 5px;
     font-size: 15px;

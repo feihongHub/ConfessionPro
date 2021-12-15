@@ -23,15 +23,15 @@
     <div id="content">
         <div id="code">
             <p id="p1">
-                <span class="space"/><span class="comments">public synchronized static <T> ArrayList<T> inputData(T... t) { </span><br />
-                <span class="space"/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">ArrayList<T> ts = new ArrayList<>(); </span><br />
+                <span class="space"/><span class="comments">public synchronized static &lt;T&gt; ArrayList&lt;T&gt; inputData(T... t) { </span><br />
+                <span class="space"/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">ArrayList&lt;T&gt; ts = new ArrayList<>(); </span><br />
                 <span class="space"/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">Collections.addAll(ts, t);</span><br />
                 <span class="space"/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">return ts;</span><br />
                 <span class="space"/><span class="comments">}</span><br />
                 <br/>
-                <span class="comments">&nbsp;public synchronized static <T> void searchMidNumber(ArrayList<T> objList) throws NullPointerException{</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">PriorityQueue<T> upQueue = new PriorityQueue<>();</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">PriorityQueue<T> lowQueue = new PriorityQueue<>(new Comparator<T>() {</span><br />
+                <span class="comments">&nbsp;public synchronized static &lt;T&gt; void searchMidNumber(ArrayList&lt;T&gt; objList) throws NullPointerException{</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">PriorityQueue&lt;T&gt; upQueue = new PriorityQueue<>();</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">PriorityQueue&lt;T&gt; lowQueue = new PriorityQueue<>(new Comparator&lt;T&gt;() {</span><br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">@Override</span><br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">public int compare(T o1, T o2) {</span><br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">if (o1 instanceof Integer && o2 instanceof Integer) {</span><br />
@@ -63,7 +63,7 @@
                 <span class="comments">&nbsp;}</span><br />
                 <br />
                 <span class="comments">&nbsp;public static void main(String[] args) {</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">ArrayList<Integer> objList = inputData(3, 9, 0, 7, 1, 8, 5);</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">ArrayList&lt;Integer&gt; objList = inputData(3, 9, 0, 7, 1, 8, 5);</span><br />
                 &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">try{</span><br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">searchMidNumber(objList);</span><br />
                 &nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">}catch (NullPointerException e){</span><br />
@@ -206,8 +206,9 @@
                 '<span class="remark">进入说人话模式[0==================100%]</span><span style="display: none">15px</span></br>' +
                 '<span class="remark" style="color: yellow">//对于每一个人而言，找到一个能够与他长相思守的人的概率服从正态分布(也称:高斯分布);</span></br>'+
                 '<img src="image/normal.jpg" onload="loadImage()"></br>'+
-                '<span class="remark" style="color: yellow">//概率越高，对应的y轴值也越高。当处于顶点位置时，对应x轴的那个点被称之为“中位数”;</span></br>' +
-                '<span class="remark" style="color: yellow">//在我看来，你就是我的“中位数”，所以我会不遗余力的尝试用最快的速度从人群中找到你;</span></br>');
+                '<span class="remark" style="color: yellow">//y轴对应的值越高，代表发生的概率越大。当处于顶点位置时，对应x轴的位置点被称之为“中位数”;</span></br>' +
+                '<span class="remark" style="color: yellow">//在我看来，你就是我的“中位数”，所以我会不遗余力的尝试用最快的速度从人群中找到你;</span></br>'+
+                '<span class="remark" style="color: yellow">end;</span>');
         },time);
     }
 
