@@ -45,11 +45,6 @@ public class SearchController {
         return "fire";
     }
 
-    @RequestMapping("/declaration")
-    public String declaration(){
-        return "declaration";
-    }
-
     @RequestMapping("/amapshow")
     public String amapShow(){
         return "amapshow";
